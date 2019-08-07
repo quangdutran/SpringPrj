@@ -1,5 +1,7 @@
 package tacos;
 
+import java.util.Date;
+
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.CreditCardNumber;
@@ -27,6 +29,27 @@ public class Order {
 			private String ccExpiration;
 			@Digits(integer=3, fraction=0, message="Invalid CVV")
 			private String ccCVV;
+
+			
+	private Long id;
+	private Date placedAt;
+
+			
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Date getPlacedAt() {
+		return placedAt;
+	}
+
+	public void setPlacedAt(Date placedAt) {
+		this.placedAt = placedAt;
+	}
 
 	public String getName() {
 		return name;
